@@ -1,0 +1,1036 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#srenvio-api" class="toc-h1 toc-link" data-title="Srenvio API">Srenvio API</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#shipments" class="toc-h1 toc-link" data-title="Shipments">Shipments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-shipments" class="toc-h2 toc-link" data-title="Get All Shipments">Get All Shipments</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-shipment" class="toc-h2 toc-link" data-title="Get a Specific Shipment">Get a Specific Shipment</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-shipment" class="toc-h2 toc-link" data-title="Create a Shipment">Create a Shipment</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#labels" class="toc-h1 toc-link" data-title="Labels">Labels</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-labels" class="toc-h2 toc-link" data-title="Get All Labels">Get All Labels</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-label" class="toc-h2 toc-link" data-title="Get a Specific Label">Get a Specific Label</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-label" class="toc-h2 toc-link" data-title="Create a Label">Create a Label</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#cancel-label-request" class="toc-h1 toc-link" data-title="Cancel Label Request">Cancel Label Request</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-cancel-label-request" class="toc-h2 toc-link" data-title="Create a Cancel Label Request">Create a Cancel Label Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://www.srenvio.com/users/sign_up'>Sign Up for an API Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='srenvio-api'>Srenvio API</h1>
+<p>Welcome to the Srenvio API! You can use our API to access Srenvio API endpoints,
+which can get information about Shipments and Labels, also create Cancel Label Requests.</p>
+
+<p>You can view code examples in the dark area to the right.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"https://api.srenvio.com/v1/shipments"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>YOUR_API_KEY</code> with your API key.</p>
+</blockquote>
+
+<p>Srenvio uses API keys to allow access to the API. You need to contact our support
+team to get your API key. <a href="mailto:hola@srenvio.com">hola@srenvio.com</a></p>
+
+<p>Srenvio expects for the API key to be included in all API requests to the server
+in a header that looks like the following:</p>
+
+<p><code>Authorization: Token token=YOUR_API_KEY</code></p>
+
+<aside class="notice">
+You must replace <code>YOUR_API_KEY</code> with your personal API key.
+</aside>
+<h1 id='shipments'>Shipments</h1><h2 id='get-all-shipments'>Get All Shipments</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/shipments"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1867"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipments"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.662-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:13:25.060-05:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"parcel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"533"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcels"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11892"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11891"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"address_to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1893"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"address_from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1892"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"412"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"labels"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"included"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"533"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcels"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29.7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mass_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KG"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"distance_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CM"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11892"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.217-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.217-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SENDEX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REG"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrives_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11891"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.176-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.176-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"228.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REDPACK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Express"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXPRESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrives_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1893"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sr. Alberto Suárez Reyes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suple Max"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glorieta Gerardo 751 Planta alta"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nuevo León"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64926"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7413806700"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ejemplo@srenvio.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.685-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.685-05:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1892"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rosario Varela Escamilla"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Foo Bar Company"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Privada Carbo 40010"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nuevo León"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8181818181"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ejemplo@srenvio.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.680-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.680-05:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.srenvio.com/v1/shipments?page%5Bnumber%5D=1&amp;page%5Bsize%5D=20"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.srenvio.com/v1/shipments?page%5Bnumber%5D=1&amp;page%5Bsize%5D=20"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.srenvio.com/v1/shipments?page%5Bnumber%5D=1&amp;page%5Bsize%5D=20"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Shipments.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.srenvio.com/v1/shipments</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page[number]</td>
+<td>1</td>
+<td>Number of page.</td>
+</tr>
+<tr>
+<td>page[size]</td>
+<td>20</td>
+<td>Quantity of records per page.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+At the end of the returned JSON there are some links to get the previous and next
+data. Also the current, first and last link page.
+</aside>
+<h2 id='get-a-specific-shipment'>Get a Specific Shipment</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"GET https://api.srenvio.com/v1/shipments/&lt;ID&gt;"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1867"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipments"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.662-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:13:25.060-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"parcel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"533"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcels"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11892"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11891"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"address_to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1893"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"address_from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1892"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"412"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"labels"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"included"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"533"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcels"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29.7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mass_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KG"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"distance_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CM"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11892"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.217-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.217-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SENDEX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REG"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrives_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11891"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.176-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:12:08.176-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"228.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REDPACK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Express"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXPRESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrives_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1893"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sr. Alberto Suárez Reyes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suple Max"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glorieta Gerardo 751 Planta alta"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nuevo León"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64926"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7413806700"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ejemplo@srenvio.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.685-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.685-05:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1892"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rosario Varela Escamilla"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Foo Bar Company"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Privada Carbo 40010"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centro"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nuevo León"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8181818181"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e`"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.680-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T13:11:57.680-05:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint retrieves a specific Shipment.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.srenvio.com/v1/shipments/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the Shipment to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-shipment'>Create a Shipment</h2>
+<blockquote>
+<p>Example of create a Shipment:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/shipments"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "address_from": {
+      "name": "Jorge Morales",
+      "company": "srenvio",
+      "address1": "Constitución",
+      "address2": "9125",
+      "city": "Monterrey",
+      "province": "Monterrey",
+      "zip": "64000",
+      "country": "MX",
+      "phone": "8181818181",
+      "email": "ejemplo@srenvio.com"
+    },
+    "address_to": {
+      "name": "Beto Rincón",
+      "company": "Roplasti",
+      "address1": "Av. Garza Sada",
+      "address2": "9113",
+      "city": "Monterrey",
+      "province": "Monterrey",
+      "zip": "64700",
+      "country": "MX",
+      "phone": "8181818181",
+      "email": "ejemplo@srenvio.com",
+      "contents": "Suplementos"
+    },
+    "parcels": [
+      {
+        "length": 10,
+        "height": 10,
+        "width": 10,
+        "weight": 10,
+        "mass_unit": "KG",
+        "distance_unit": "CM"
+      }
+    ]
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1869"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shipments"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAITING"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.250-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.250-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"relationships"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"parcel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"535"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcels"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"rates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11906"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11907"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"address_to"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1897"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"address_from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1896"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"included"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"535"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcels"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mass_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KG"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"distance_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CM"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11917"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.552-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.552-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"119.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SENDEX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regular"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REG"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrives_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11918"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rates"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:17.422-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:17.422-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"89.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CARSSA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nacional"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NACIONAL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_level_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duration_terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrives_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1897"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beto Rincón"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Roplasti"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Av. Garza Sada"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9113"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64700"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8181818181"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ejemplo@srenvio.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.244-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.244-05:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1896"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"addresses"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jorge Morales"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"srenvio"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Constitución"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9125"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monterrey"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8181818181"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ejemplo@srenvio.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.239-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T15:13:16.239-05:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a Shipment.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://api.srenvio.com/v1/shipments</code></p>
+<h1 id='labels'>Labels</h1><h2 id='get-all-labels'>Get All Labels</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/labels"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"labels"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:18:56.665-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:18:56.665-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tracking_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tracking_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"label-url.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tracking_url_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.estafeta.com/Rastreo/XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3087</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"labels"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:18:57.326-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-26T00:18:57.326-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tracking_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tracking_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"label-url.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tracking_url_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.estafeta.com/Rastreo/XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3089</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.srenvio.com/v1/labels?page%5Bnumber%5D=1&amp;page%5Bsize%5D=20"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.srenvio.com/v1/labels?page%5Bnumber%5D=1&amp;page%5Bsize%5D=20"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prev"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.srenvio.com/v1/labels?page%5Bnumber%5D=2&amp;page%5Bsize%5D=20"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.srenvio.com/v1/labels?page%5Bnumber%5D=13&amp;page%5Bsize%5D=20"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Labels.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.srenvio.com/v1/labels</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page[number]</td>
+<td>1</td>
+<td>Number of page.</td>
+</tr>
+<tr>
+<td>page[size]</td>
+<td>20</td>
+<td>Quantity of records per page.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+At the end of the returned JSON there are some links to get the previous and next
+data. Also the current, first and last link page.
+</aside>
+<h2 id='get-a-specific-label'>Get a Specific Label</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"GET https://api.srenvio.com/v1/labels/&lt;ID&gt;"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"labels"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-18T16:05:05.370-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-07-18T16:05:05.370-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tracking_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tracking_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"label-url.pdf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tracking_url_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.fedex.com/apps/fedextrack/?action=track&amp;trackingnumber=XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>This endpoint retrieves a specific Label.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://api.srenvio.com/v1/labels/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the Label to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-label'>Create a Label</h2>
+<blockquote>
+<p>Example of create a Label:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/labels"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "rate_id": 10834,
+    "label_format": "pdf"
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"414"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"labels"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T16:32:49.190-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-04T16:32:49.190-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tracking_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tracking_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"label-url.pdf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tracking_url_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.grupocarssa.com/new/XXXXXXXXXX"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11931</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a Shipment.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://api.srenvio.com/v1/shipments</code></p>
+<h1 id='cancel-label-request'>Cancel Label Request</h1><h2 id='create-a-cancel-label-request'>Create a Cancel Label Request</h2>
+<blockquote>
+<p>Example of create a Cancel Label Request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/cancel_label_request"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "tracking_number": "XXXXXXXXXX",
+    "reason": "Datos de dirección erróneos."
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancel_requests"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reviewing"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Datos de dirección erróneos."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-05T09:24:35.453-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-05T09:24:35.453-05:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a Cancel Label Request.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://api.srenvio.com/v1/shipments</code></p>
+<h1 id='errors'>Errors</h1>
+<p>The srenvio API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified resource could not be found.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
