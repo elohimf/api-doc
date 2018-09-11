@@ -225,6 +225,9 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
+            <a href="#developer-testing-environment" class="toc-h1 toc-link" data-title="Developer Testing Environment">Developer Testing Environment</a>
+          </li>
+          <li>
             <a href="#shipments" class="toc-h1 toc-link" data-title="Shipments">Shipments</a>
               <ul class="toc-list-h2">
                   <li>
@@ -300,6 +303,17 @@ in a header that looks like the following:</p>
 <aside class="notice">
 You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </aside>
+<h1 id='developer-testing-environment'>Developer Testing Environment</h1>
+<p>We recommend to use our demo environment before run your code in production.</p>
+
+<ol>
+<li>Firstly, you need to register in demo environment <a href="https://demo.srenvio.com/users/sign_up">here</a>.</li>
+<li>Contact our support team to get your API key.</li>
+</ol>
+
+<p>The URL for demo environment is:</p>
+
+<p><code>https://api-demo.srenvio.com/</code></p>
 <h1 id='shipments'>Shipments</h1><h2 id='get-all-shipments'>Get All Shipments</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/shipments"</span>
   -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
 </code></pre>
