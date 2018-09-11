@@ -31,6 +31,7 @@ curl "https://api.srenvio.com/v1/shipments"
   -H "Authorization: Token token=YOUR_API_KEY"
 ```
 
+
 > Make sure to replace `YOUR_API_KEY` with your API key.
 
 Srenvio uses API keys to allow access to the API. You need to contact our support
@@ -44,6 +45,17 @@ in a header that looks like the following:
 <aside class="notice">
 You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </aside>
+
+# Developer Testing Environment
+
+We recommend to use our demo environment before run your code in production.
+
+  1. Firstly, you need to register in demo environment [here](https://demo.srenvio.com/users/sign_up).
+  2. Contact our support team to get your API key.
+
+The URL for demo environment is:
+
+`https://api-demo.srenvio.com/`
 
 # Shipments
 
