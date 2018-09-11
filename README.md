@@ -14,7 +14,7 @@ Welcome to the Srenvio repository. In our repository you can find the link to th
 
 You can find the full documentation about our REST public API in the next link.
 
-* [REST Documentation](https://www.srenvio.com)
+* [REST Documentation](https://srenvio.github.io/api-doc/)
 
 ### Requirements
 
