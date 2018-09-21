@@ -46,7 +46,7 @@ in a header that looks like the following:
 You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </aside>
 
-# Developer Testing Environment
+# Developer Testing
 
 We recommend to use our demo environment before run your code in production.
 
@@ -56,6 +56,86 @@ We recommend to use our demo environment before run your code in production.
 The URL for demo environment is:
 
 `https://api-demo.srenvio.com/`
+
+# Quotations
+
+## Get a Quotation
+
+> curl:
+
+```shell
+curl "https://api.srenvio.com/v1/quotations"
+  -H "Authorization: Token token=YOUR_API_KEY"
+```
+
+> Example of JSON structure sent:
+
+```json
+{
+  "user_id": 1,
+  "zip_from": "91000",
+  "zip_to": "64000",
+  "parcel": {
+    "weight": 10,
+    "height": 10,
+    "width": 10,
+    "length": 10
+  }
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+      "amount_local": 380,
+      "currency_local": "MXN",
+      "provider": "FEDEX",
+      "service_level_name": "Standard Overnight",
+      "service_level_code": "STANDARD_OVERNIGHT",
+      "trackable": null,
+      "days": 1,
+      "insurance_currency": "NMP",
+      "insurance_commission": 70,
+      "insurance_deductible": 0.01,
+      "self_insurance": true
+  },
+  {
+      "amount_local": 420,
+      "currency_local": "MXN",
+      "provider": "UPS",
+      "service_level_name": "UPS Standard",
+      "service_level_code": "STANDARD",
+      "trackable": true,
+      "days": 5,
+      "insurance_currency": "MXN",
+      "insurance_commission": 70,
+      "insurance_deductible": 0.01,
+      "self_insurance": false
+  }
+]
+```
+
+This endpoint receive an user, zip codes and parcel measures. It returns a list that
+contains all Rates found.
+
+### HTTP Request
+
+`GET https://api.srenvio.com/v1/quotations`
+
+### Parameters
+
+Field | Type | Description
+--------- | ------- | -----------
+**user_id** | Integer | User account ID, used to load available rate carriers.
+**zip_from** | String(5) | Zip code of origin.
+**zip_to** | String(5) | Zip code of destination.
+**parcel** | JSON | Used to specify the measures and total Parcel weight .
+**weight** | Integer | Weight of Parcel, must be in KG.
+**height** | Integer | Height of Parcel, must be in CM.
+**width** | Integer | Width of Parcel, must be in CM.
+**length** | Integer | Length of Parcel, must be in CM.
 
 # Shipments
 
