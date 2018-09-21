@@ -225,7 +225,15 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#developer-testing-environment" class="toc-h1 toc-link" data-title="Developer Testing Environment">Developer Testing Environment</a>
+            <a href="#developer-testing" class="toc-h1 toc-link" data-title="Developer Testing">Developer Testing</a>
+          </li>
+          <li>
+            <a href="#quotations" class="toc-h1 toc-link" data-title="Quotations">Quotations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-quotation" class="toc-h2 toc-link" data-title="Get a Quotation">Get a Quotation</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#shipments" class="toc-h1 toc-link" data-title="Shipments">Shipments</a>
@@ -303,7 +311,7 @@ in a header that looks like the following:</p>
 <aside class="notice">
 You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </aside>
-<h1 id='developer-testing-environment'>Developer Testing Environment</h1>
+<h1 id='developer-testing'>Developer Testing</h1>
 <p>We recommend to use our demo environment before run your code in production.</p>
 
 <ol>
@@ -314,6 +322,113 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 <p>The URL for demo environment is:</p>
 
 <p><code>https://api-demo.srenvio.com/</code></p>
+<h1 id='quotations'>Quotations</h1><h2 id='get-a-quotation'>Get a Quotation</h2>
+<blockquote>
+<p>curl:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/quotations"</span>
+  -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+</code></pre>
+<blockquote>
+<p>Example of JSON structure sent:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zip_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91000"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zip_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64000"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parcel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="mi">380</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEDEX"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Standard Overnight"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD_OVERNIGHT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"trackable"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"insurance_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NMP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"insurance_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"insurance_deductible"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"self_insurance"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="mi">420</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency_local"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPS Standard"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"trackable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"insurance_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"insurance_commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"insurance_deductible"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"self_insurance"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint receive an user, zip codes and parcel measures. It returns a list that
+contains all Rates found.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.srenvio.com/v1/quotations</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>user_id</strong></td>
+<td>Integer</td>
+<td>User account ID, used to load available rate carriers.</td>
+</tr>
+<tr>
+<td><strong>zip_from</strong></td>
+<td>String(5)</td>
+<td>Zip code of origin.</td>
+</tr>
+<tr>
+<td><strong>zip_to</strong></td>
+<td>String(5)</td>
+<td>Zip code of destination.</td>
+</tr>
+<tr>
+<td><strong>parcel</strong></td>
+<td>JSON</td>
+<td>Used to specify the measures and total Parcel weight .</td>
+</tr>
+<tr>
+<td><strong>weight</strong></td>
+<td>Integer</td>
+<td>Weight of Parcel, must be in KG.</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>Integer</td>
+<td>Height of Parcel, must be in CM.</td>
+</tr>
+<tr>
+<td><strong>width</strong></td>
+<td>Integer</td>
+<td>Width of Parcel, must be in CM.</td>
+</tr>
+<tr>
+<td><strong>length</strong></td>
+<td>Integer</td>
+<td>Length of Parcel, must be in CM.</td>
+</tr>
+</tbody></table>
 <h1 id='shipments'>Shipments</h1><h2 id='get-all-shipments'>Get All Shipments</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/shipments"</span>
   -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
 </code></pre>
@@ -466,7 +581,7 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all Shipments.</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.srenvio.com/v1/shipments</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
@@ -636,7 +751,7 @@ data. Also the current, first and last link page.
 
 </span></code></pre>
 <p>This endpoint retrieves a specific Shipment.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://api.srenvio.com/v1/shipments/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -832,7 +947,7 @@ data. Also the current, first and last link page.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a Shipment.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://api.srenvio.com/v1/shipments</code></p>
 <h1 id='labels'>Labels</h1><h2 id='get-all-labels'>Get All Labels</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/labels"</span>
   -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
@@ -881,7 +996,7 @@ data. Also the current, first and last link page.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all Labels.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.srenvio.com/v1/labels</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
@@ -932,7 +1047,7 @@ data. Also the current, first and last link page.
 
 </span></code></pre>
 <p>This endpoint retrieves a specific Label.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://api.srenvio.com/v1/labels/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -979,7 +1094,7 @@ data. Also the current, first and last link page.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a Shipment.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST https://api.srenvio.com/v1/shipments</code></p>
 <h1 id='cancel-label-request'>Cancel Label Request</h1><h2 id='create-a-cancel-label-request'>Create a Cancel Label Request</h2>
 <blockquote>
@@ -1010,7 +1125,7 @@ data. Also the current, first and last link page.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a Cancel Label Request.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://api.srenvio.com/v1/shipments</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The srenvio API uses the following error codes:</p>
