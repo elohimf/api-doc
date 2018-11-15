@@ -1093,14 +1093,14 @@ data. Also the current, first and last link page.
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a Shipment.</p>
+<p>This endpoint creates a Label.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST https://api.srenvio.com/v1/shipments</code></p>
+<p><code>POST https://api.srenvio.com/v1/labels</code></p>
 <h1 id='cancel-label-request'>Cancel Label Request</h1><h2 id='create-a-cancel-label-request'>Create a Cancel Label Request</h2>
 <blockquote>
 <p>Example of create a Cancel Label Request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/cancel_label_request"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/cancel_label_requests"</span>
   -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
   -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{
@@ -1126,7 +1126,7 @@ data. Also the current, first and last link page.
 </span></code></pre>
 <p>This endpoint creates a Cancel Label Request.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>POST https://api.srenvio.com/v1/shipments</code></p>
+<p><code>POST https://api.srenvio.com/v1/cancel_label_requests</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The srenvio API uses the following error codes:</p>
 
