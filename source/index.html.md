@@ -813,11 +813,11 @@ curl "https://api.srenvio.com/v1/labels"
 }
 ```
 
-This endpoint creates a Shipment.
+This endpoint creates a Label.
 
 ### HTTP Request
 
-`POST https://api.srenvio.com/v1/shipments`
+`POST https://api.srenvio.com/v1/labels`
 
 # Cancel Label Request
 
@@ -826,7 +826,7 @@ This endpoint creates a Shipment.
 > Example of create a Cancel Label Request:
 
 ```shell
-curl "https://api.srenvio.com/v1/cancel_label_request"
+curl "https://api.srenvio.com/v1/cancel_label_requests"
   -H "Authorization: Token token=YOUR_API_KEY"
   -H "Content-Type: application/json" \
   -d '{
@@ -856,4 +856,4 @@ This endpoint creates a Cancel Label Request.
 
 ### HTTP Request
 
-`POST https://api.srenvio.com/v1/shipments`
+`POST https://api.srenvio.com/v1/cancel_label_requests`
