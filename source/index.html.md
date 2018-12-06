@@ -122,7 +122,7 @@ contains all Rates found.
 
 ### HTTP Request
 
-`GET https://api.srenvio.com/v1/quotations`
+`POST https://api.srenvio.com/v1/quotations`
 
 ### Parameters
 
