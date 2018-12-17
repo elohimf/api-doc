@@ -89,30 +89,28 @@ curl "https://api.srenvio.com/v1/quotations"
 ```json
 [
   {
-      "amount_local": 380,
-      "currency_local": "MXN",
-      "provider": "FEDEX",
-      "service_level_name": "Standard Overnight",
-      "service_level_code": "STANDARD_OVERNIGHT",
-      "trackable": null,
-      "days": 1,
-      "insurance_currency": "NMP",
-      "insurance_commission": 70,
-      "insurance_deductible": 0.01,
-      "self_insurance": true
+    "service_pricing": 540,
+    "currency": "MXN",
+    "provider": "UPS",
+    "service_level_name": "UPS Express",
+    "service_level_code": "EXPRESS_SAVER",
+    "eta": 2,
+    "insurable": false,
+    "out_of_area_service": false,
+    "out_of_area_pricing": 0,
+    "total_pricing": 540
   },
   {
-      "amount_local": 420,
-      "currency_local": "MXN",
-      "provider": "UPS",
-      "service_level_name": "UPS Standard",
-      "service_level_code": "STANDARD",
-      "trackable": true,
-      "days": 5,
-      "insurance_currency": "MXN",
-      "insurance_commission": 70,
-      "insurance_deductible": 0.01,
-      "self_insurance": false
+    "service_pricing": 681,
+    "currency": "MXN",
+    "provider": "ESTAFETA",
+    "service_level_name": "Servicio Express",
+    "service_level_code": "ESTAFETA_NEXT_DAY",
+    "eta": 2,
+    "insurable": true,
+    "out_of_area_service": true,
+    "out_of_area_pricing": 100,
+    "total_pricing": 781
   }
 ]
 ```
@@ -136,6 +134,26 @@ Field | Type | Description
 **height** | Integer | Height of Parcel, must be in CM.
 **width** | Integer | Width of Parcel, must be in CM.
 **length** | Integer | Length of Parcel, must be in CM.
+
+
+### Description
+The field `service_pricing` is used to indicate the price of the service.
+Depending on the zip code, they may have extra charges.
+
+Out of area means that zone is not covered for normal delivery and generates
+extra charges.
+
+`out_of_area_service` is used to indicate if the service is out of the area for
+normal delivery and if it's true.
+
+`out_of_area_pricing` have the pricing for this extra service.
+
+`total_pricing` have the sum of `service_pricing` and `out_of_area_pricing`.
+
+`eta` Estimated time of arrival.
+
+`insurable` means that the shipment could be
+insured declaring a cost. Not implemented yet in this API version.
 
 # Shipments
 
