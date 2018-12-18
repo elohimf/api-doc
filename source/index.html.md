@@ -127,7 +127,7 @@ Field | Type | Description
 --------- | ------- | -----------
 **zip_from** | String(5) | Zip code of origin.
 **zip_to** | String(5) | Zip code of destination.
-**parcel** | JSON | Used to specify the measures and total Parcel weight .
+**parcel** | JSON | Used to specify the measures and total Parcel weight.
 **weight** | Integer | Weight of Parcel, must be in KG.
 **height** | Integer | Height of Parcel, must be in CM.
 **width** | Integer | Width of Parcel, must be in CM.
@@ -168,136 +168,214 @@ curl "https://api.srenvio.com/v1/shipments"
 {
   "data": [
     {
-      "id": "1867",
+      "id": "902675",
       "type": "shipments",
       "attributes": {
-        "status": "SUCCESS",
-        "created_at": "2018-09-04T13:11:57.662-05:00",
-        "updated_at": "2018-09-04T13:13:25.060-05:00"
+        "status": "WAITING",
+        "created_at": "2018-12-18T15:00:21.892-06:00",
+        "updated_at": "2018-12-18T15:00:21.892-06:00"
       },
       "relationships": {
         "parcel": {
           "data": {
-            "id": "533",
+            "id": "773773",
             "type": "parcels"
           }
         },
         "rates": {
           "data": [
             {
-              "id": "11892",
+              "id": "7146458",
               "type": "rates"
             },
             {
-              "id": "11891",
+              "id": "7146457",
+              "type": "rates"
+            },
+            {
+              "id": "7146456",
+              "type": "rates"
+            },
+            {
+              "id": "7146455",
+              "type": "rates"
+            },
+            {
+              "id": "7146454",
               "type": "rates"
             }
           ]
         },
         "address_to": {
           "data": {
-            "id": "1893",
+            "id": "2901622",
             "type": "addresses"
           }
         },
         "address_from": {
           "data": {
-            "id": "1892",
+            "id": "2901621",
             "type": "addresses"
           }
         },
         "label": {
-          "data": {
-            "id": "412",
-            "type": "labels"
-          }
+          "data": null
         }
       }
     }
   ],
   "included": [
     {
-      "id": "533",
+      "id": "773773",
       "type": "parcels",
       "attributes": {
-        "length": "29.7",
-        "height": "21.0",
-        "width": "5.0",
-        "weight": "0.5",
+        "length": "10.0",
+        "height": "10.0",
+        "width": "10.0",
+        "weight": "3.0",
         "mass_unit": "KG",
         "distance_unit": "CM"
       }
     },
     {
-      "id": "11892",
+      "id": "7146458",
       "type": "rates",
       "attributes": {
-        "created_at": "2018-09-04T13:12:08.217-05:00",
-        "updated_at": "2018-09-04T13:12:08.217-05:00",
-        "amount_local": "98.0",
+        "created_at": "2018-12-18T15:00:22.418-06:00",
+        "updated_at": "2018-12-18T15:00:22.418-06:00",
+        "amount_local": "119.0",
         "currency_local": "MXN",
-        "provider": "SENDEX",
-        "service_level_name": "Regular",
-        "service_level_code": "REG",
+        "provider": "CARSSA",
+        "service_level_name": "Nacional",
+        "service_level_code": "NACIONAL",
         "service_level_terms": null,
         "days": 5,
         "duration_terms": null,
         "zone": null,
-        "arrives_by": null
+        "arrives_by": null,
+        "out_of_area": false,
+        "out_of_area_pricing": "0.0",
+        "total_pricing": "119.0"
       }
     },
     {
-      "id": "11891",
+      "id": "7146457",
       "type": "rates",
       "attributes": {
-        "created_at": "2018-09-04T13:12:08.176-05:00",
-        "updated_at": "2018-09-04T13:12:08.176-05:00",
-        "amount_local": "228.0",
+        "created_at": "2018-12-18T15:00:22.389-06:00",
+        "updated_at": "2018-12-18T15:00:22.389-06:00",
+        "amount_local": "204.0",
         "currency_local": "MXN",
-        "provider": "REDPACK",
-        "service_level_name": "Express",
+        "provider": "DHL",
+        "service_level_name": "DHL Express",
         "service_level_code": "EXPRESS",
         "service_level_terms": null,
         "days": 2,
         "duration_terms": null,
         "zone": null,
-        "arrives_by": null
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "349.0"
       }
     },
     {
-      "id": "1893",
-      "type": "addresses",
+      "id": "7146456",
+      "type": "rates",
       "attributes": {
-        "name": "Sr. Alberto Suárez Reyes",
-        "company": "Suple Max",
-        "address1": "Glorieta Gerardo 751 Planta alta",
-        "address2": "Centro",
-        "city": "Monterrey",
-        "province": "Nuevo León",
-        "zip": "64926",
-        "country": "MX",
-        "phone": "7413806700",
-        "email": "ejemplo@srenvio.com",
-        "created_at": "2018-09-04T13:11:57.685-05:00",
-        "updated_at": "2018-09-04T13:11:57.685-05:00"
+        "created_at": "2018-12-18T15:00:22.380-06:00",
+        "updated_at": "2018-12-18T15:00:22.380-06:00",
+        "amount_local": "180.0",
+        "currency_local": "MXN",
+        "provider": "DHL",
+        "service_level_name": "DHL Terrestre",
+        "service_level_code": "STANDARD",
+        "service_level_terms": null,
+        "days": 5,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "325.0"
       }
     },
     {
-      "id": "1892",
+      "id": "7146455",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.150-06:00",
+        "updated_at": "2018-12-18T15:00:22.150-06:00",
+        "amount_local": "205.0",
+        "currency_local": "MXN",
+        "provider": "FEDEX",
+        "service_level_name": "Standard Overnight",
+        "service_level_code": "STANDARD_OVERNIGHT",
+        "service_level_terms": null,
+        "days": 2,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "350.0"
+      }
+    },
+    {
+      "id": "7146454",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.141-06:00",
+        "updated_at": "2018-12-18T15:00:22.141-06:00",
+        "amount_local": "149.0",
+        "currency_local": "MXN",
+        "provider": "FEDEX",
+        "service_level_name": "Fedex Express Saver",
+        "service_level_code": "FEDEX_EXPRESS_SAVER",
+        "service_level_terms": null,
+        "days": 5,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "294.0"
+      }
+    },
+    {
+      "id": "2901622",
       "type": "addresses",
       "attributes": {
-        "name": "Rosario Varela Escamilla",
-        "company": "Foo Bar Company",
-        "address1": "Privada Carbo 40010",
-        "address2": "Centro",
-        "city": "Monterrey",
-        "province": "Nuevo León",
-        "zip": "64000",
-        "country": "MX",
-        "phone": "8181818181",
+        "name": "Jorge Fernández",
+        "company": "-",
+        "address1": "Av. Lázaro Cárdenas #234",
+        "address2": "Americana",
+        "city": "Guadalajara",
+        "province": "Jalisco",
+        "zip": "23312",
+        "country": "MXN",
+        "phone": "3311510605",
         "email": "ejemplo@srenvio.com",
-        "created_at": "2018-09-04T13:11:57.680-05:00",
-        "updated_at": "2018-09-04T13:11:57.680-05:00"
+        "created_at": "2018-12-18T15:00:21.887-06:00",
+        "updated_at": "2018-12-18T15:00:21.887-06:00"
+      }
+    },
+    {
+      "id": "2901621",
+      "type": "addresses",
+      "attributes": {
+        "name": "Jose Fernando",
+        "company": "srenvio",
+        "address1": "Av. Principal #234",
+        "address2": "Centro",
+        "city": "Guadalajara",
+        "province": "Jalisco",
+        "zip": "02900",
+        "country": "MXN",
+        "phone": "3384217447",
+        "email": "srenvio@email.com",
+        "created_at": "2018-12-18T15:00:21.874-06:00",
+        "updated_at": "2018-12-18T15:00:21.874-06:00"
       }
     }
   ],
@@ -341,135 +419,213 @@ curl "GET https://api.srenvio.com/v1/shipments/<ID>"
 ```json
 {
   "data": {
-    "id": "1867",
+    "id": "902675",
     "type": "shipments",
     "attributes": {
-      "status": "SUCCESS",
-      "created_at": "2018-09-04T13:11:57.662-05:00",
-      "updated_at": "2018-09-04T13:13:25.060-05:00"
+      "status": "WAITING",
+      "created_at": "2018-12-18T15:00:21.892-06:00",
+      "updated_at": "2018-12-18T15:00:21.892-06:00"
     },
     "relationships": {
       "parcel": {
         "data": {
-          "id": "533",
+          "id": "773773",
           "type": "parcels"
         }
       },
       "rates": {
         "data": [
           {
-            "id": "11892",
+            "id": "7146458",
             "type": "rates"
           },
           {
-            "id": "11891",
+            "id": "7146457",
+            "type": "rates"
+          },
+          {
+            "id": "7146456",
+            "type": "rates"
+          },
+          {
+            "id": "7146455",
+            "type": "rates"
+          },
+          {
+            "id": "7146454",
             "type": "rates"
           }
         ]
       },
       "address_to": {
         "data": {
-          "id": "1893",
+          "id": "2901622",
           "type": "addresses"
         }
       },
       "address_from": {
         "data": {
-          "id": "1892",
+          "id": "2901621",
           "type": "addresses"
         }
       },
       "label": {
-        "data": {
-          "id": "412",
-          "type": "labels"
-        }
+        "data": null
       }
     }
   },
   "included": [
     {
-      "id": "533",
+      "id": "773773",
       "type": "parcels",
       "attributes": {
-        "length": "29.7",
-        "height": "21.0",
-        "width": "5.0",
-        "weight": "0.5",
+        "length": "10.0",
+        "height": "10.0",
+        "width": "10.0",
+        "weight": "3.0",
         "mass_unit": "KG",
         "distance_unit": "CM"
       }
     },
     {
-      "id": "11892",
+      "id": "7146458",
       "type": "rates",
       "attributes": {
-        "created_at": "2018-09-04T13:12:08.217-05:00",
-        "updated_at": "2018-09-04T13:12:08.217-05:00",
-        "amount_local": "98.0",
+        "created_at": "2018-12-18T15:00:22.418-06:00",
+        "updated_at": "2018-12-18T15:00:22.418-06:00",
+        "amount_local": "119.0",
         "currency_local": "MXN",
-        "provider": "SENDEX",
-        "service_level_name": "Regular",
-        "service_level_code": "REG",
+        "provider": "CARSSA",
+        "service_level_name": "Nacional",
+        "service_level_code": "NACIONAL",
         "service_level_terms": null,
         "days": 5,
         "duration_terms": null,
         "zone": null,
-        "arrives_by": null
+        "arrives_by": null,
+        "out_of_area": false,
+        "out_of_area_pricing": "0.0",
+        "total_pricing": "119.0"
       }
     },
     {
-      "id": "11891",
+      "id": "7146457",
       "type": "rates",
       "attributes": {
-        "created_at": "2018-09-04T13:12:08.176-05:00",
-        "updated_at": "2018-09-04T13:12:08.176-05:00",
-        "amount_local": "228.0",
+        "created_at": "2018-12-18T15:00:22.389-06:00",
+        "updated_at": "2018-12-18T15:00:22.389-06:00",
+        "amount_local": "204.0",
         "currency_local": "MXN",
-        "provider": "REDPACK",
-        "service_level_name": "Express",
+        "provider": "DHL",
+        "service_level_name": "DHL Express",
         "service_level_code": "EXPRESS",
         "service_level_terms": null,
         "days": 2,
         "duration_terms": null,
         "zone": null,
-        "arrives_by": null
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "349.0"
       }
     },
     {
-      "id": "1893",
+      "id": "7146456",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.380-06:00",
+        "updated_at": "2018-12-18T15:00:22.380-06:00",
+        "amount_local": "180.0",
+        "currency_local": "MXN",
+        "provider": "DHL",
+        "service_level_name": "DHL Terrestre",
+        "service_level_code": "STANDARD",
+        "service_level_terms": null,
+        "days": 5,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "325.0"
+      }
+    },
+    {
+      "id": "7146455",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.150-06:00",
+        "updated_at": "2018-12-18T15:00:22.150-06:00",
+        "amount_local": "205.0",
+        "currency_local": "MXN",
+        "provider": "FEDEX",
+        "service_level_name": "Standard Overnight",
+        "service_level_code": "STANDARD_OVERNIGHT",
+        "service_level_terms": null,
+        "days": 2,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "350.0"
+      }
+    },
+    {
+      "id": "7146454",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.141-06:00",
+        "updated_at": "2018-12-18T15:00:22.141-06:00",
+        "amount_local": "149.0",
+        "currency_local": "MXN",
+        "provider": "FEDEX",
+        "service_level_name": "Fedex Express Saver",
+        "service_level_code": "FEDEX_EXPRESS_SAVER",
+        "service_level_terms": null,
+        "days": 5,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "294.0"
+      }
+    },
+    {
+      "id": "2901622",
       "type": "addresses",
       "attributes": {
-        "name": "Sr. Alberto Suárez Reyes",
-        "company": "Suple Max",
-        "address1": "Glorieta Gerardo 751 Planta alta",
-        "address2": "Centro",
-        "city": "Monterrey",
-        "province": "Nuevo León",
-        "zip": "64926",
-        "country": "MX",
-        "phone": "7413806700",
+        "name": "Jorge Fernández",
+        "company": "-",
+        "address1": "Av. Lázaro Cárdenas #234",
+        "address2": "Americana",
+        "city": "Guadalajara",
+        "province": "Jalisco",
+        "zip": "23312",
+        "country": "MXN",
+        "phone": "3311510605",
         "email": "ejemplo@srenvio.com",
-        "created_at": "2018-09-04T13:11:57.685-05:00",
-        "updated_at": "2018-09-04T13:11:57.685-05:00"
+        "created_at": "2018-12-18T15:00:21.887-06:00",
+        "updated_at": "2018-12-18T15:00:21.887-06:00"
       }
     },
     {
-      "id": "1892",
+      "id": "2901621",
       "type": "addresses",
       "attributes": {
-        "name": "Rosario Varela Escamilla",
-        "company": "Foo Bar Company",
-        "address1": "Privada Carbo 40010",
+        "name": "Jose Fernando",
+        "company": "srenvio",
+        "address1": "Av. Principal #234",
         "address2": "Centro",
-        "city": "Monterrey",
-        "province": "Nuevo León",
-        "zip": "64000",
-        "country": "MX",
-        "phone": "8181818181",
-        "email": "e`",
-        "created_at": "2018-09-04T13:11:57.680-05:00",
-        "updated_at": "2018-09-04T13:11:57.680-05:00"
+        "city": "Guadalajara",
+        "province": "Jalisco",
+        "zip": "02900",
+        "country": "MXN",
+        "phone": "3384217447",
+        "email": "srenvio@email.com",
+        "created_at": "2018-12-18T15:00:21.874-06:00",
+        "updated_at": "2018-12-18T15:00:21.874-06:00"
       }
     }
   ]
@@ -498,42 +654,38 @@ curl "https://api.srenvio.com/v1/shipments"
   -H "Authorization: Token token=YOUR_API_KEY"
   -H "Content-Type: application/json" \
   -d '{
-    "address_from": {
-      "name": "Jorge Morales",
+      "address_from": {
+      "province": "Jalisco",
+      "city": "Guadalajara",
+      "name": "Jose Fernando",
+      "zip": "02900",
+      "country": "MXN",
+      "address1": "Av. Principal #234",
       "company": "srenvio",
-      "address1": "Constitución",
-      "address2": "9125",
-      "city": "Monterrey",
-      "province": "Monterrey",
-      "zip": "64000",
-      "country": "MX",
-      "phone": "8181818181",
-      "email": "ejemplo@srenvio.com"
-    },
-    "address_to": {
-      "name": "Beto Rincón",
-      "company": "Roplasti",
-      "address1": "Av. Garza Sada",
-      "address2": "9113",
-      "city": "Monterrey",
-      "province": "Monterrey",
-      "zip": "64700",
-      "country": "MX",
-      "phone": "8181818181",
-      "email": "ejemplo@srenvio.com",
-      "contents": "Suplementos"
-    },
-    "parcels": [
-      {
-        "length": 10,
+      "address2": "Centro",
+      "phone": "3384217447",
+      "email": "srenvio@email.com"},
+      "parcels": [{
+        "weight": 3,
+        "distance_unit": "CM",
+        "mass_unit": "KG",
         "height": 10,
         "width": 10,
-        "weight": 10,
-        "mass_unit": "KG",
-        "distance_unit": "CM"
+        "length": 10
+      }],
+      "address_to": {
+        "province": "Jalisco",
+        "city": "Guadalajara",
+        "name": "Jorge Fernández",
+        "zip": "23312",
+        "country": "MXN",
+        "address1": " Av. Lázaro Cárdenas #234",
+        "company": "-",
+        "address2": "Americana",
+        "phone": "3311510605",
+        "email": "ejemplo@srenvio.com"
       }
-    ]
-  }'
+    }'
 ```
 
 > The above command returns JSON structured like this:
@@ -541,41 +693,53 @@ curl "https://api.srenvio.com/v1/shipments"
 ```json
 {
   "data": {
-    "id": "1869",
+    "id": "902675",
     "type": "shipments",
     "attributes": {
       "status": "WAITING",
-      "created_at": "2018-09-04T15:13:16.250-05:00",
-      "updated_at": "2018-09-04T15:13:16.250-05:00"
+      "created_at": "2018-12-18T15:00:21.892-06:00",
+      "updated_at": "2018-12-18T15:00:21.892-06:00"
     },
     "relationships": {
       "parcel": {
         "data": {
-          "id": "535",
+          "id": "773773",
           "type": "parcels"
         }
       },
       "rates": {
         "data": [
           {
-            "id": "11906",
+            "id": "7146454",
             "type": "rates"
           },
           {
-            "id": "11907",
+            "id": "7146455",
+            "type": "rates"
+          },
+          {
+            "id": "7146456",
+            "type": "rates"
+          },
+          {
+            "id": "7146457",
+            "type": "rates"
+          },
+          {
+            "id": "7146458",
             "type": "rates"
           }
         ]
       },
       "address_to": {
         "data": {
-          "id": "1897",
+          "id": "2901622",
           "type": "addresses"
         }
       },
       "address_from": {
         "data": {
-          "id": "1896",
+          "id": "2901621",
           "type": "addresses"
         }
       },
@@ -586,42 +750,108 @@ curl "https://api.srenvio.com/v1/shipments"
   },
   "included": [
     {
-      "id": "535",
+      "id": "773773",
       "type": "parcels",
       "attributes": {
         "length": "10.0",
         "height": "10.0",
         "width": "10.0",
-        "weight": "10.0",
+        "weight": "3.0",
         "mass_unit": "KG",
         "distance_unit": "CM"
       }
     },
     {
-      "id": "11917",
+      "id": "7146454",
       "type": "rates",
       "attributes": {
-        "created_at": "2018-09-04T15:13:16.552-05:00",
-        "updated_at": "2018-09-04T15:13:16.552-05:00",
-        "amount_local": "119.0",
+        "created_at": "2018-12-18T15:00:22.141-06:00",
+        "updated_at": "2018-12-18T15:00:22.141-06:00",
+        "amount_local": "149.0",
         "currency_local": "MXN",
-        "provider": "SENDEX",
-        "service_level_name": "Regular",
-        "service_level_code": "REG",
+        "provider": "FEDEX",
+        "service_level_name": "Fedex Express Saver",
+        "service_level_code": "FEDEX_EXPRESS_SAVER",
         "service_level_terms": null,
         "days": 5,
         "duration_terms": null,
         "zone": null,
-        "arrives_by": null
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "294.0"
       }
     },
     {
-      "id": "11918",
+      "id": "7146455",
       "type": "rates",
       "attributes": {
-        "created_at": "2018-09-04T15:13:17.422-05:00",
-        "updated_at": "2018-09-04T15:13:17.422-05:00",
-        "amount_local": "89.0",
+        "created_at": "2018-12-18T15:00:22.150-06:00",
+        "updated_at": "2018-12-18T15:00:22.150-06:00",
+        "amount_local": "205.0",
+        "currency_local": "MXN",
+        "provider": "FEDEX",
+        "service_level_name": "Standard Overnight",
+        "service_level_code": "STANDARD_OVERNIGHT",
+        "service_level_terms": null,
+        "days": 2,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "350.0"
+      }
+    },
+    {
+      "id": "7146456",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.380-06:00",
+        "updated_at": "2018-12-18T15:00:22.380-06:00",
+        "amount_local": "180.0",
+        "currency_local": "MXN",
+        "provider": "DHL",
+        "service_level_name": "DHL Terrestre",
+        "service_level_code": "STANDARD",
+        "service_level_terms": null,
+        "days": 5,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "325.0"
+      }
+    },
+    {
+      "id": "7146457",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.389-06:00",
+        "updated_at": "2018-12-18T15:00:22.389-06:00",
+        "amount_local": "204.0",
+        "currency_local": "MXN",
+        "provider": "DHL",
+        "service_level_name": "DHL Express",
+        "service_level_code": "EXPRESS",
+        "service_level_terms": null,
+        "days": 2,
+        "duration_terms": null,
+        "zone": null,
+        "arrives_by": null,
+        "out_of_area": true,
+        "out_of_area_pricing": "145.00",
+        "total_pricing": "349.0"
+      }
+    },
+    {
+      "id": "7146458",
+      "type": "rates",
+      "attributes": {
+        "created_at": "2018-12-18T15:00:22.418-06:00",
+        "updated_at": "2018-12-18T15:00:22.418-06:00",
+        "amount_local": "119.0",
         "currency_local": "MXN",
         "provider": "CARSSA",
         "service_level_name": "Nacional",
@@ -630,43 +860,46 @@ curl "https://api.srenvio.com/v1/shipments"
         "days": 5,
         "duration_terms": null,
         "zone": null,
-        "arrives_by": null
+        "arrives_by": null,
+        "out_of_area": false,
+        "out_of_area_pricing": "0.0",
+        "total_pricing": "119.0"
       }
     },
     {
-      "id": "1897",
+      "id": "2901622",
       "type": "addresses",
       "attributes": {
-        "name": "Beto Rincón",
-        "company": "Roplasti",
-        "address1": "Av. Garza Sada",
-        "address2": "9113",
-        "city": "Monterrey",
-        "province": "Monterrey",
-        "zip": "64700",
-        "country": "MX",
-        "phone": "8181818181",
+        "name": "Jorge Fernández",
+        "company": "-",
+        "address1": "Av. Lázaro Cárdenas #234",
+        "address2": "Americana",
+        "city": "Guadalajara",
+        "province": "Jalisco",
+        "zip": "23312",
+        "country": "MXN",
+        "phone": "3311510605",
         "email": "ejemplo@srenvio.com",
-        "created_at": "2018-09-04T15:13:16.244-05:00",
-        "updated_at": "2018-09-04T15:13:16.244-05:00"
+        "created_at": "2018-12-18T15:00:21.887-06:00",
+        "updated_at": "2018-12-18T15:00:21.887-06:00"
       }
     },
     {
-      "id": "1896",
+      "id": "2901621",
       "type": "addresses",
       "attributes": {
-        "name": "Jorge Morales",
+        "name": "Jose Fernando",
         "company": "srenvio",
-        "address1": "Constitución",
-        "address2": "9125",
-        "city": "Monterrey",
-        "province": "Monterrey",
-        "zip": "64000",
-        "country": "MX",
-        "phone": "8181818181",
-        "email": "ejemplo@srenvio.com",
-        "created_at": "2018-09-04T15:13:16.239-05:00",
-        "updated_at": "2018-09-04T15:13:16.239-05:00"
+        "address1": "Av. Principal #234",
+        "address2": "Centro",
+        "city": "Guadalajara",
+        "province": "Jalisco",
+        "zip": "02900",
+        "country": "MXN",
+        "phone": "3384217447",
+        "email": "srenvio@email.com",
+        "created_at": "2018-12-18T15:00:21.874-06:00",
+        "updated_at": "2018-12-18T15:00:21.874-06:00"
       }
     }
   ]
