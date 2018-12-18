@@ -72,7 +72,6 @@ curl "https://api.srenvio.com/v1/quotations"
 
 ```json
 {
-  "user_id": 1,
   "zip_from": "91000",
   "zip_to": "64000",
   "parcel": {
@@ -115,7 +114,7 @@ curl "https://api.srenvio.com/v1/quotations"
 ]
 ```
 
-This endpoint receive an user, zip codes and parcel measures. It returns a list that
+This endpoint receives zip codes and parcel measures. It returns a list that
 contains all Rates found.
 
 ### HTTP Request
@@ -126,7 +125,6 @@ contains all Rates found.
 
 Field | Type | Description
 --------- | ------- | -----------
-**user_id** | Integer | User account ID, used to load available rate carriers.
 **zip_from** | String(5) | Zip code of origin.
 **zip_to** | String(5) | Zip code of destination.
 **parcel** | JSON | Used to specify the measures and total Parcel weight .
