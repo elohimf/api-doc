@@ -348,24 +348,24 @@ You must replace <code>YOUR_API_KEY</code> with your personal API key.
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"service_pricing"</span><span class="p">:</span><span class="w"> </span><span class="mi">540</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="mi">540</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPS"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPS Express"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXPRESS_SAVER"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"eta"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"insurable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"out_of_area_service"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"out_of_area_pricing"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"total_pricing"</span><span class="p">:</span><span class="w"> </span><span class="mi">540</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"service_pricing"</span><span class="p">:</span><span class="w"> </span><span class="mi">681</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount_local"</span><span class="p">:</span><span class="w"> </span><span class="mi">681</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ESTAFETA"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"service_level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Servicio Express"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"service_level_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ESTAFETA_NEXT_DAY"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"eta"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"insurable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"out_of_area_service"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"out_of_area_pricing"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
@@ -422,7 +422,7 @@ contains all Rates found.</p>
 </tr>
 </tbody></table>
 <h3 id='description'>Description</h3>
-<p>The field <code>service_pricing</code> is used to indicate the price of the service.
+<p>The field <code>amount_local</code> is used to indicate the price of the service.
 Depending on the zip code, they may have extra charges.</p>
 
 <p>Out of area means that zone is not covered for normal delivery and generates
@@ -433,9 +433,9 @@ normal delivery and if it&#39;s true.</p>
 
 <p><code>out_of_area_pricing</code> have the pricing for this extra service.</p>
 
-<p><code>total_pricing</code> have the sum of <code>service_pricing</code> and <code>out_of_area_pricing</code>.</p>
+<p><code>total_pricing</code> have the sum of <code>amount_local</code> and <code>out_of_area_pricing</code>.</p>
 
-<p><code>eta</code> Estimated time of arrival.</p>
+<p><code>days</code> Estimated time of arrival.</p>
 
 <p><code>insurable</code> means that the shipment could be
 insured declaring a cost. Not implemented yet in this API version.</p>
