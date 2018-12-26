@@ -88,24 +88,24 @@ curl "https://api.srenvio.com/v1/quotations"
 ```json
 [
   {
-    "service_pricing": 540,
+    "amount_local": 540,
     "currency": "MXN",
     "provider": "UPS",
     "service_level_name": "UPS Express",
     "service_level_code": "EXPRESS_SAVER",
-    "eta": 2,
+    "days": 2,
     "insurable": false,
     "out_of_area_service": false,
     "out_of_area_pricing": 0,
     "total_pricing": 540
   },
   {
-    "service_pricing": 681,
+    "amount_local": 681,
     "currency": "MXN",
     "provider": "ESTAFETA",
     "service_level_name": "Servicio Express",
     "service_level_code": "ESTAFETA_NEXT_DAY",
-    "eta": 2,
+    "days": 2,
     "insurable": true,
     "out_of_area_service": true,
     "out_of_area_pricing": 100,
@@ -135,7 +135,7 @@ Field | Type | Description
 
 
 ### Description
-The field `service_pricing` is used to indicate the price of the service.
+The field `amount_local` is used to indicate the price of the service.
 Depending on the zip code, they may have extra charges.
 
 Out of area means that zone is not covered for normal delivery and generates
@@ -146,9 +146,9 @@ normal delivery and if it's true.
 
 `out_of_area_pricing` have the pricing for this extra service.
 
-`total_pricing` have the sum of `service_pricing` and `out_of_area_pricing`.
+`total_pricing` have the sum of `amount_local` and `out_of_area_pricing`.
 
-`eta` Estimated time of arrival.
+`days` Estimated time of arrival.
 
 `insurable` means that the shipment could be
 insured declaring a cost. Not implemented yet in this API version.
