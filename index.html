@@ -969,6 +969,7 @@ data. Also the current, first and last link page.
         "address2": "Americana",
         "phone": "3311510605",
         "email": "ejemplo@srenvio.com"
+        "contents": ""
       }
     }'</span>
 </code></pre>
@@ -1192,6 +1193,8 @@ data. Also the current, first and last link page.
 <p>This endpoint creates a Shipment.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://api.srenvio.com/v1/shipments</code></p>
+
+<p>The field <code>contents</code> under <code>address_to</code> object is used to indicate the description of package contents.</p>
 <h1 id='labels'>Labels</h1><h2 id='get-all-labels'>Get All Labels</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.srenvio.com/v1/labels"</span>
   -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
 </code></pre>
