@@ -684,6 +684,7 @@ curl "https://api.srenvio.com/v1/shipments"
         "address2": "Americana",
         "phone": "3311510605",
         "email": "ejemplo@srenvio.com"
+        "contents": ""
       }
     }'
 ```
@@ -911,6 +912,8 @@ This endpoint creates a Shipment.
 ### HTTP Request
 
 `POST https://api.srenvio.com/v1/shipments`
+
+The field `contents` under `address_to` object is used to indicate the description of package contents.
 
 # Labels
 
