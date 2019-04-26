@@ -683,7 +683,7 @@ curl "https://api.srenvio.com/v1/shipments"
         "company": "-",
         "address2": "Americana",
         "phone": "3311510605",
-        "email": "ejemplo@srenvio.com"
+        "email": "ejemplo@srenvio.com",
         "contents": ""
       }
     }'
