@@ -272,6 +272,14 @@
               </ul>
           </li>
           <li>
+            <a href="#tracking" class="toc-h1 toc-link" data-title="Tracking">Tracking</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-tracking-status-for-a-carrier" class="toc-h2 toc-link" data-title="Get Tracking status for a carrier">Get Tracking status for a carrier</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1373,6 +1381,143 @@ data. Also the current, first and last link page.
 <p>This endpoint creates a Cancel Label Request.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://api.srenvio.com/v1/cancel_label_requests</code></p>
+<h1 id='tracking'>Tracking</h1><h2 id='get-tracking-status-for-a-carrier'>Get Tracking status for a carrier</h2><pre class="highlight shell tab-shell"><code>curl -XPOST <span class="s2">"https://api.srenvio.com/v1/tracking?carrier=&lt;carrier_name&gt;&amp;tracking_numbers=&lt;tracking_numbers&gt;"</span> -H <span class="s2">"Authorization: Token token=YOUR_API_KEY"</span>
+</code></pre>
+<blockquote>
+<p>The above command receives two query parameters, carrier and tracking_numbers. carrier should be one of Fedex, Estafeta, Redpack, Paquetexpress, Carssa, Sendex or UPS. tracking_numbers should be a list of tracking_numbers separated by commas, e.x. 123456,123456. It returns a JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="s2">"tracking_number"</span><span class="p">:</span><span class="s2">"1Z61WE220499838290"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status_code"</span><span class="p">:</span><span class="s2">"DELIVERED"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"history"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-27T16:25:00+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Delivered"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-21T09:00:00+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Arrival Scan"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-21T07:20:00+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Departure Scan"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-20T12:33:38+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Warehouse Scan"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-20T10:00:00+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Arrival Scan"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-20T03:30:00+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Departure Scan"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-20T00:51:00+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Origin Scan"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-19T23:29:18+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Pickup Scan"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-19T18:24:16+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"The UPS Access Point™ location has prepared the package for return to UPS or pickup by UPS."</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-19T18:24:00+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Drop-Off"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="s2">"2019-06-19T17:22:26+00:00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Order Processed: Ready for UPS"</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns the tracking status for one or more tracking numbers.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST https://api.srenvio.com/v1/tracking</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>carrier</td>
+<td>The carrier to retrieve. Refer to table below for supported carriers.</td>
+</tr>
+<tr>
+<td>tracking_numbers</td>
+<td>The list of tracking numbers separated by commas.</td>
+</tr>
+</tbody></table>
+<h3 id='carriers'>Carriers</h3>
+<table><thead>
+<tr>
+<th>Carrier</th>
+<th>Maximum tracking numbers per request</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Fedex</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Estafeta</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Redpack</td>
+<td>10</td>
+</tr>
+<tr>
+<td>UPS</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Carssa</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Sendex</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Paquetexpress</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tracking_number</td>
+<td>The tracking number that was requested.</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>SrEnvio&#39;s internal status code, refer to table below for possible codes.</td>
+</tr>
+<tr>
+<td>history</td>
+<td>The tracking history of the requested tracking number, comprised of a UTC ISO8601 timestamp and its description.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+The description varies in format between carriers, thus they should not be expected to match a specific format or be consistent even between tracking numbers.
+</aside>
+<h3 id='status-codes'>Status codes</h3>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>DELIVERED</td>
+<td>The package/s was/were delivered.</td>
+</tr>
+<tr>
+<td>CANCELLED</td>
+<td>The label for this tracking number was cancelled.</td>
+</tr>
+<tr>
+<td>PICKED_UP</td>
+<td>The package/s was/were collected by a courier.</td>
+</tr>
+<tr>
+<td>RETURNED</td>
+<td>The package/s was/were returned by the recipient or the carrier</td>
+</tr>
+<tr>
+<td>CREATED</td>
+<td>The label was just created for this/these package/s and it hasn&#39;t been picked up yet</td>
+</tr>
+<tr>
+<td>IN_TRANSIT</td>
+<td>The package/s are en route to delivery</td>
+</tr>
+<tr>
+<td>EXCEPTION</td>
+<td>There is an issue with the delivery or package, refer to the history for more details.</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>The srenvio API uses the following error codes:</p>
 
