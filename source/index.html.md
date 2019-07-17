@@ -1109,3 +1109,77 @@ This endpoint creates a Cancel Label Request.
 ### HTTP Request
 
 `POST https://api.srenvio.com/v1/cancel_label_requests`
+
+# Tracking
+
+## Get Tracking status for a carrier
+
+```shell
+curl -XPOST "https://api.srenvio.com/v1/tracking?carrier=<carrier_name>&tracking_numbers=<tracking_numbers>" -H "Authorization: Token token=YOUR_API_KEY"
+```
+
+> The above command receives two query parameters, carrier and tracking_numbers. carrier should be one of Fedex, Estafeta, Redpack, Paquetexpress, Carssa, Sendex or UPS. tracking_numbers should be a list of tracking_numbers separated by commas, e.x. 123456,123456. It returns a JSON structured like this:
+
+```json
+[{"tracking_number":"1Z61WE220499838290",
+  "status_code":"DELIVERED",
+  "history":[
+    {"timestamp":"2019-06-27T16:25:00+00:00","description":"Delivered"},
+    {"timestamp":"2019-06-21T09:00:00+00:00","description":"Arrival Scan"},
+    {"timestamp":"2019-06-21T07:20:00+00:00","description":"Departure Scan"},
+    {"timestamp":"2019-06-20T12:33:38+00:00","description":"Warehouse Scan"},
+    {"timestamp":"2019-06-20T10:00:00+00:00","description":"Arrival Scan"},
+    {"timestamp":"2019-06-20T03:30:00+00:00","description":"Departure Scan"},
+    {"timestamp":"2019-06-20T00:51:00+00:00","description":"Origin Scan"},
+    {"timestamp":"2019-06-19T23:29:18+00:00","description":"Pickup Scan"},
+    {"timestamp":"2019-06-19T18:24:16+00:00","description":"The UPS Access Point™ location has prepared the package for return to UPS or pickup by UPS."},
+    {"timestamp":"2019-06-19T18:24:00+00:00","description":"Drop-Off"},
+    {"timestamp":"2019-06-19T17:22:26+00:00","description":"Order Processed: Ready for UPS"}
+    ]
+}]
+```
+
+This endpoint returns the tracking status for one or more tracking numbers.
+
+### HTTP Request
+`POST https://api.srenvio.com/v1/tracking`
+
+### Query Parameters
+Parameter | Description 
+--------- | ------------
+carrier   | The carrier to retrieve. Refer to table below for supported carriers.
+tracking_numbers | The list of tracking numbers separated by commas.
+
+### Carriers
+Carrier | Maximum tracking numbers per request
+------- | ------------------------------------
+Fedex   | 30
+Estafeta | 50
+Redpack | 10
+UPS | 1
+Carssa | 1
+Sendex | 1
+Paquetexpress | 1
+
+### Response
+Parameter | Description
+--------- | ------------
+tracking_number | The tracking number that was requested.
+status_code | SrEnvio's internal status code, refer to table below for possible codes.
+history | The tracking history of the requested tracking number, comprised of a UTC ISO8601 timestamp and its description.
+
+<aside class="notice">
+The description varies in format between carriers, thus they should not be expected to match a specific format or be consistent even between tracking numbers.
+</aside>
+
+### Status codes
+Code | Meaning 
+---- | -------
+DELIVERED | The package/s was/were delivered.
+CANCELLED | The label for this tracking number was cancelled.
+PICKED_UP | The package/s was/were collected by a courier.
+RETURNED | The package/s was/were returned by the recipient or the carrier
+CREATED | The label was just created for this/these package/s and it hasn't been picked up yet
+IN_TRANSIT | The package/s are en route to delivery
+EXCEPTION | There is an issue with the delivery or package, refer to the history for more details. 
+
